@@ -1,6 +1,0 @@
-
-
-my key:  G6mwpAV6OKym3DXOularZgUX43tq4ZDU
-
-
-city search: http://dataservice.accuweather.com/locations/v1/cities/search

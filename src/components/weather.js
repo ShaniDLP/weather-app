@@ -1,15 +1,12 @@
 import React, {  useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getWeather, fetchDailyWeather, fetchWeeklyWeather } from '../store/actions/weatherActions'
-import { CHANGE_CITY, FETCH_AUTOCOMPLETE, UPDATE_FAVORITES, TOGGLE_PAGES, FETCH_DAILY_WEATHER, FETCH_WEEKLY_WEATHER, FETCH_WEEKLY_WEATHER_SUCCESS } from '../store/types';
+import { getWeather } from '../store/actions/weatherActions'
+import {  UPDATE_FAVORITES, TOGGLE_PAGES } from '../store/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSun, faHeart, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun, faHeart, faHome } from '@fortawesome/free-solid-svg-icons';
 import WeeklyForecast from './weeklyForecast';
-import weeklyData from '../weeklyData.json';
 import ExternalLinks from '../UI/externalLinks';
-// import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import './weather.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import MyFavorites from './favotires/favorites';
 import Search from './search/search';
 
@@ -17,19 +14,17 @@ const Weather = () => {
     const dispatch = useDispatch();
     const weatherList = useSelector(state => state.weatherList);
     const { loading, selectedKey, selectedCity, currentDailyTemp, showError, errorMessage, iconNumber, togglePages, isSelectedInFavorites, currentWeeklyForecast } = weatherList;
-    // const currentWeeklyForecast = weeklyData['DailyForecasts'];
 
     useEffect(() => {
         dispatch(getWeather())
     }, [dispatch]);
 
     const addToFavorites = () => {
-        console.log(selectedCity, selectedKey);
         try {
             const storedState = localStorage.getItem("state");
             let isFirst = false;
 
-            if (!storedState) { // couldn't find "state" in localStorage
+            if (!storedState) { 
                 const state = [{key: selectedKey, name: selectedCity }];
                 const storedState = JSON.stringify(state);
                 localStorage.setItem("state", storedState);
@@ -45,20 +40,20 @@ const Weather = () => {
             let addSelectedCity = true;
             const tempState = JSON.parse(storedState);
 
-            console.log( "going over array" );
+ 
             tempState.forEach((data) => {
                 data.key != selectedKey ?
                     newState.push(data) :
-                    addSelectedCity = false; console.log("removing", data.name)
+                    addSelectedCity = false; 
                 });
 
             if(addSelectedCity) {
-                console.log("adding city", selectedCity);
+               
                 newState.push({key: selectedKey, name: selectedCity });
                 
             }
             
-            localStorage.setItem("state", JSON.stringify(newState));    // update storage
+            localStorage.setItem("state", JSON.stringify(newState));  
 
             dispatch({
                 type: UPDATE_FAVORITES,
@@ -66,7 +61,7 @@ const Weather = () => {
             })
 
         } catch(err) {
-            console.log("couldn't open storage");
+         
             return;
         }
     }

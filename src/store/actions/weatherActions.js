@@ -3,7 +3,7 @@ import axios from 'axios';
 import store from "../../store/store";
 
 
-const api_key = "NmTutitlyJjHxUpR37kM6MbLEc6JEgmb";
+const api_key = "kbTWCzOaL5SJd74XNGG4SkWDHr86Xz5q";
 const metric = true;
 
 
@@ -13,13 +13,11 @@ export const getWeather = () => async dispatch => {
     const { weatherList } = store.getState();
     const { selectedKey } = weatherList;
     
-    console.log("getWeather - selectedKey", selectedKey);
     dispatch(fetchDailyWeather(selectedKey));
     dispatch(fetchWeeklyWeather(selectedKey));
 }
 
 export const fetchDailyWeather = (key) => async dispatch => {
-    console.log("dailyWeather", key);
     const ApiService = await axios.get("https://dataservice.accuweather.com/currentconditions/v1/" + key + "?apikey=" + api_key);
     dispatch({
         type: FETCH_DAILY_WEATHER
@@ -42,9 +40,7 @@ export const fetchDailyWeather = (key) => async dispatch => {
 }
 
 export const fetchWeeklyWeather = (key) => async dispatch => {
-    console.log("weeklyWeather", key);
     const ApiServiceWeekly = await axios.get("https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=" + api_key  +"&metric=" + metric );
-    console.log(ApiServiceWeekly + ' ApiService weekly');
     dispatch({
         type: FETCH_WEEKLY_WEATHER
     });
@@ -63,33 +59,3 @@ export const fetchWeeklyWeather = (key) => async dispatch => {
     }
 
 }
-
-
-
-// http://dataservice.accuweather.com/locations/v1/cities/autocomplete
-
-
-// http://www.domain.com/page.php?var1=value1&var2=val2&var3=value3&...
-
-
-// const res = await axios.get(`http://jsonplaceholder.typicode.com/users`)
-
-// export const fetchDailyWeather = () => async  dispatch => {
-//     try {
-//        //If API sends the response without an error the data will be passed to the payload
-//        const ApiService = await axios.get("https://dataservice.accuweather.com/forecasts/v1/daily/1day/"+city_key+"?apikey="+api_key);
-//        dispatch({
-//             type: FETCH_DAILY_WEATHER_SUCCESS,
-//             payload: ApiService.data
-//         });
-
-//     }
-//     catch(error) {
-//         dispatch( {
-//             type: FETCH_DAILY_WEATHER_ERROR,
-//             payload: error,
-//         })
-//     }
-// console.log('yayyy');
-
-// }

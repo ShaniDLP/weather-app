@@ -20,7 +20,7 @@ const myFavorites = () => {
                     <li className="weatherItems" key={i}>
                         <span className="forecastHeadline"> {city.name}</span>
                         <div className="iconAndTemp">
-                            <span className="weeklyIcon">icon</span>
+                            <span className="weeklyIcon"></span>
                         </div>
                     </li>
             )}

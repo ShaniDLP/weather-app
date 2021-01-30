@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import {
     CHANGE_CITY, FETCH_AUTOCOMPLETE, UPDATE_FAVORITES, FETCH_AUTOCOMPLETE_ERROR,
     FETCH_AUTOCOMPLETE_SUCCESS, FETCH_DAILY_WEATHER, FETCH_DAILY_WEATHER_SUCCESS,
@@ -75,7 +74,6 @@ export default function (state = initialState, action) {
             }
 
         case FETCH_DAILY_WEATHER_SUCCESS:
-            console.log('FETCH_DAILY_WEATHER_SUCCESS', action.payload);
             return {
                 ...state,
                 currentDailyTemp: action.payload.temp,
@@ -84,7 +82,6 @@ export default function (state = initialState, action) {
             }
 
         case FETCH_DAILY_WEATHER_ERROR:
-            console.log("FETCH_DAILY_WEATHER_ERROR");
             return {
                 ...state,
                 loading: false,
@@ -99,7 +96,6 @@ export default function (state = initialState, action) {
             }
 
         case FETCH_WEEKLY_WEATHER_SUCCESS:
-            console.log('WEEKLY', action.payload)
             return {
                 ...state,
                 currentWeeklyForecast: action.payload,
@@ -107,7 +103,6 @@ export default function (state = initialState, action) {
             }
 
         case FETCH_WEEKLY_WEATHER_ERROR:
-            console.log("FETCH_WEEKLY_WEATHER_ERROR");
             return {
                 ...state,
                 loading: false,
@@ -122,7 +117,6 @@ export default function (state = initialState, action) {
             }
 
         case HIDE_ERROR:
-            console.log("HIDE ERROR");
             return {
                 ...state,
                 showError: false
