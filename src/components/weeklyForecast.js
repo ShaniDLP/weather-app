@@ -10,9 +10,11 @@ const WeeklyForecast = ({ data }) =>
       (day, i) =>
         <div className="weatherItems" key={i}>
           <li>
-            <span className="forecastHeadline"> {days[new Date(day['Date']).getDay()]}</span>
-            <div className="iconAndTemp">
+            <span className="forecastHeadline">{days[new Date(day['Date']).getDay()]}</span>
+            <span className="temperature">
               {day['Temperature']['Maximum']['Value']}°
+            </span>
+            <div className="iconAndTemp">
               <span className="weeklyIcon">
                 <img src={`https://developer.accuweather.com/sites/default/files/${(iconPadding+day['Day'].Icon).slice(-iconPadding.length)}-s.png`} alt="" />
               </span>
