@@ -1,0 +1,230 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Antic&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Montserrat:wght@300&display=swap');
+body{
+    font-family: 'Antic', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100 !important;
+}
+.mainPage{
+    background: url('../images/4.jpg');
+    background-size: cover;
+    height: 100%;
+
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    z-index: -1;
+}
+header h2{
+    position: relative;
+    float: right;
+    right: 3%;
+    font-size: 16px;
+}
+#searchButton{
+    width: 200px;
+    margin: auto;
+    top:10%;
+    opacity:0.5;
+    margin-top: 20px;
+}
+.dailyWeather{
+width: 300px;
+position: relative;
+left:15%;
+top: 60px;
+}
+.addFavorite{
+font-size: 24px !important;
+    position: absolute;
+    left: -40px;
+    top: 7px;
+}
+.removeFavorite{
+    color:red;
+}
+
+#cityName{
+    text-align: left !important;
+    font-size: 32px;
+    position: absolute;
+    /* margin-top: 5%; */
+}
+
+#currentDailyTemp{
+font-size: 80px;
+/* margin-top: 15%; */
+position: absolute;
+padding-top: 30px;
+}
+
+.dailyWeather .icon{
+font-size: 40px;
+padding-left: 190px;
+position: absolute;
+padding-top: 140px;
+}
+
+.weeklyWeather{
+    /* position: relative; */
+    /* position: absolute; */
+    /* margin-top: 80%; */
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 530px;   
+}
+
+ul{
+    flex-direction: row;
+    /* align-items: flex-start; */
+    display: flex;
+    
+}
+.weatherItems{
+    background-color: aliceblue;
+    opacity: 0.6;
+    flex-grow: 1;
+     height:100%;
+     align-self: center;
+     border-radius: 8%;
+     font-size: 18px;
+     justify-content:space-around;
+     width: 150px;
+   
+}
+
+.weatherItems +.weatherItems{
+    margin-left: 12%;
+}
+li{
+    list-style-type: none;
+    opacity: 1;
+ 
+ 
+}
+li span{
+    clear: both;
+    display: block;
+}
+
+@media (max-width: 860px) {
+ .dailyWeather{
+width: 100%;
+top: 40px;
+left: 60%;
+    }
+
+    .dailyWeather .icon{
+padding-top: 70px;
+padding-left: 98px;
+    }
+    .weeklyWeather{
+        margin-top:300px;
+        width: 100%;
+    }
+
+ul{
+ flex-direction: column; 
+ width: 100% !important;
+ padding-left: 0px !important; 
+ padding-right: 0px !important; 
+
+}
+ul span{
+    display: inline-block;
+}
+ul .forecastHeadline{
+    float: left ;
+    padding-left: 10px;
+}
+li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.weatherItems{
+    width: 100%;
+    border-radius: 0;
+    height:100%;
+    justify-content:space-around;
+    flex-grow: 1;
+    margin-bottom: 5px;
+    background-color: none;
+
+
+ 
+
+}
+.weatherItems +.weatherItems{
+    /* margin-bottom: 2%; */
+    /* margin-top: 2%; */
+    margin-left: 0px !important;
+
+}
+.iconAndTemp{
+    float: right;
+    margin-right: 40px;
+   
+}
+.weeklyIcon{
+    padding-left: 5px;
+}
+#cityName{
+    text-align: left !important;
+}
+}
+
+.autocomplete-wrapper {
+    width: 350px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .autocomplete-wrapper > div {
+    width: 100%;
+  }
+  
+  .autocomplete-wrapper input {
+    border: 1px solid #cecece;
+    padding: 12px 15px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .autocomplete-wrapper input:focus {
+    border-color: #0F67FF;
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .autocomplete-wrapper .dropdown {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    max-height: 280px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #0F67FF;
+    border-top: none;
+  }
+  
+  .autocomplete-wrapper .item  {
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 15px;
+  }
+  
+  .autocomplete-wrapper .item.selected-item {
+    background-color: #0069ff;
+    color: #FAFBFC;
+  }
+  
+  .autocomplete-wrapper .item:hover {
+    background-color: #0069ff;
+    color: #FAFBFC;
+  }

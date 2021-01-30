@@ -1,0 +1,12 @@
+#favoritesContainer{
+    width: 70%;
+    margin: auto;
+}
+
+#favoritesContainer .weatherItems{
+}
+
+#favoritesContainer .weatherItems li span{
+    display: block;
+    clear: both;
+}

@@ -1,0 +1,26 @@
+.externalLinks{ 
+    margin-bottom: 2px;
+    left: 20px;
+    position: absolute;
+    bottom: 20px;
+    font-size: 25px;
+     cursor:pointer;
+    margin: 0 auto;
+     
+}
+#github{
+    margin-left: 5px;
+    color: black;
+}
+#linkedin{
+    color: black;
+
+}
+
+@media (max-width: 860px) {
+.externalLinks{
+    bottom: 12px;
+
+}
+
+}
