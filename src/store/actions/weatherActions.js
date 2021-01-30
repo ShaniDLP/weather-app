@@ -1,15 +1,13 @@
-import { CHANGE_CITY, FETCH_DAILY_WEATHER, FETCH_DAILY_WEATHER_SUCCESS, FETCH_DAILY_WEATHER_ERROR, FETCH_WEEKLY_WEATHER, FETCH_WEEKLY_WEATHER_SUCCESS, FETCH_WEEKLY_WEATHER_ERROR } from '../types';
+import { FETCH_DAILY_WEATHER, FETCH_DAILY_WEATHER_SUCCESS, FETCH_DAILY_WEATHER_ERROR, FETCH_WEEKLY_WEATHER, FETCH_WEEKLY_WEATHER_SUCCESS, FETCH_WEEKLY_WEATHER_ERROR, HIDE_ERROR } from '../types';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux'
 import store from "../../store/store";
 
 
-const api_key = "UztjRJe8lAtysOtyyGMxl0ClPeX7Q7uC";
-const city_key = "328328";
-const city_name = "London";
+const api_key = "NmTutitlyJjHxUpR37kM6MbLEc6JEgmb";
 const metric = true;
 
 
+const ERROR_TIMEOUT = 5000;
  
 export const getWeather = () => async dispatch => {
     const { weatherList } = store.getState();
@@ -29,14 +27,17 @@ export const fetchDailyWeather = (key) => async dispatch => {
     try{
         dispatch({
             type: FETCH_DAILY_WEATHER_SUCCESS,
-            payload: ApiService.data[0]['Temperature']['Metric'].Value
+            payload: {
+                temp: ApiService.data[0]['Temperature']['Metric'].Value,
+                icon: ApiService.data[0]['WeatherIcon'] }
         });
     }
     catch (error) {
         dispatch({
             type: FETCH_DAILY_WEATHER_ERROR,
             payload: error,
-        })
+        });
+        setTimeout(() => {dispatch({ type: HIDE_ERROR })}, ERROR_TIMEOUT);
     }
 }
 
@@ -50,14 +51,15 @@ export const fetchWeeklyWeather = (key) => async dispatch => {
     try {
         dispatch({
             type: FETCH_WEEKLY_WEATHER_SUCCESS,
-            payload: ApiServiceWeekly.data
+            payload: ApiServiceWeekly.data['DailyForecasts']
         });
     }
     catch (error) {
         dispatch({
             type: FETCH_WEEKLY_WEATHER_ERROR,
             payload: error,
-        })
+        });
+        setTimeout(() => {dispatch({ type: HIDE_ERROR })}, ERROR_TIMEOUT);
     }
 
 }

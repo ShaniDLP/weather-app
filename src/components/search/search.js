@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 import store from "../../store/store";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getWeather } from '../../store/actions/weatherActions'
 import { FETCH_AUTOCOMPLETE, FETCH_AUTOCOMPLETE_SUCCESS } from '../../store/types';
 import "./search.css";
 
-const api_key = "UztjRJe8lAtysOtyyGMxl0ClPeX7Q7uC";
+const api_key = "NmTutitlyJjHxUpR37kM6MbLEc6JEgmb";
 
 function SearchBar() {
   const dispatch = useDispatch();
@@ -41,10 +40,7 @@ function SearchBar() {
     }
     axios
       .get(
-        "https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=" +
-        api_key +
-        "&q=" +
-        query
+        "https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=" + api_key + "&q=" + query
       )
       .then((response) => updateOptions(response.data));
   };
@@ -66,17 +62,17 @@ function SearchBar() {
       type: FETCH_AUTOCOMPLETE,
       payload: optionalCities
     });
-    // setSearchOptions(optionalCities);
   };
 
   return (
     <div id="searchBar">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Search City" onChange={handleSearch} id="searchinput"/>
-        <input type="submit" value="SEARCH" />
+      <input type="text" placeholder="Search City" onChange={handleSearch} id="searchinput" />
       </form>
-      <div id="searchResult">{searchOptions}</div>
-    </div>
-  );
-}
+      <div id="searchWrapper">
+        <div id="searchResult">{searchOptions}</div>
+      </div>
+      </div>
+      );
+    }
 export default SearchBar;
