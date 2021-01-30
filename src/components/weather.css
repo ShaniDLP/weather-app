@@ -123,7 +123,7 @@ li span{
 @media (max-width: 860px) {
     .dailyWeather{
         width: 100%;
-        top: 150px;
+        top: 125px;
     }
 
     .weeklyWeather{

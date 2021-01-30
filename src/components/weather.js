@@ -84,56 +84,56 @@ const Weather = () => {
 
     return (
         <div>
-            <div className="mainPage"></div>
-
-            <header>
-                <span onClick={() => showHome()}>
-                    <span> <FontAwesomeIcon icon={faHome} /></span>
-                    <span className="navbar">Home</span>
-                </span>
-                <span onClick={() => showFavorites()}>
-                    <span> <FontAwesomeIcon icon={faHeart} /></span>
-                    <span className="navbar">My Favorites </span>
-                </span>
-               
-            </header>
-            
-            
-            <div className={togglePages ? "hide" : "show"}> 
-                <Search/>
-
-                <div className="dailyWeather">
-                    <span id="cityName">
-                        {selectedCity}
+            <div className="mainPage">
+                <header>
+                    <span onClick={() => showHome()}>
+                        <span> <FontAwesomeIcon icon={faHome} /></span>
+                        <span className="navbar">Home</span>
                     </span>
-                    <div className="addFavorite">
-                        <FontAwesomeIcon icon={faHeart} className={isSelectedInFavorites ? "inFavorites" : ""} onClick={() => addToFavorites()} />
-                    </div>
-                    <div id="currentDailyTemp">
-                        <span>
-                            {currentDailyTemp}°
+                    <span onClick={() => showFavorites()}>
+                        <span> <FontAwesomeIcon icon={faHeart} /></span>
+                        <span className="navbar">My Favorites </span>
+                    </span>
+                
+                </header>
+                
+                
+                <div className={togglePages ? "hide" : "show"}> 
+                    <Search/>
+
+                    <div className="dailyWeather">
+                        <span id="cityName">
+                            {selectedCity}
                         </span>
+                        <div className="addFavorite">
+                            <FontAwesomeIcon icon={faHeart} className={isSelectedInFavorites ? "inFavorites" : ""} onClick={() => addToFavorites()} />
+                        </div>
+                        <div id="currentDailyTemp">
+                            <span>
+                                {currentDailyTemp}°
+                            </span>
+                        </div>
+                        <div className="icon">
+                            <img src={iconUrl} alt="" />
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div className="icon">
-                        <img src={iconUrl} alt="" />
+
+                    <div className="weeklyWeather">
+                        <WeeklyForecast data={currentWeeklyForecast} />
                     </div>
-                    <div class="clear"></div>
                 </div>
 
-                <div className="weeklyWeather">
-                    <WeeklyForecast data={currentWeeklyForecast} />
+                <div className={togglePages ? "show" : "hide"}>
+                    <MyFavorites/>
                 </div>
-            </div>
 
-            <div className={togglePages ? "show" : "hide"}>
-                <MyFavorites/>
-            </div>
+                <ExternalLinks />
 
-            <ExternalLinks />
-
-            <div id="errorWrapper">
-                <div id="errorToast" className={showError ? "show" : ""}>
-                    {errorMessage}
+                <div id="errorWrapper">
+                    <div id="errorToast" className={showError ? "show" : ""}>
+                        {errorMessage}
+                    </div>
                 </div>
             </div>
         </div>
