@@ -81,11 +81,11 @@ header span{
 }
 
 .weeklyWeather{
-    position: absolute;
+    position: relative;
     text-align: center;
     width: 80%;
-    left: 10%;
-    bottom: 150px;   
+    margin-left: 10%;
+    margin-top: 350px;   
 }
 
 ul{
@@ -124,9 +124,9 @@ li span{
     }
 
     .weeklyWeather{
-        bottom:100px;
+        margin-top:200px;
         width: 100%;
-        left: 0;
+        margin-left: 0;
     }
 
     ul{
