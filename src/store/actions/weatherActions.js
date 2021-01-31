@@ -3,7 +3,7 @@ import axios from 'axios';
 import store from "../../store/store";
 
 
-const api_key = "GBG3H8qg9QLKcvDiygTuR2CgJt6bJSYG";
+const api_key = "adRHDPJwPtotDAkGmTY0JGXKG4gyrzNc";
 const metric = true;
 
 
