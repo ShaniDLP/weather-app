@@ -116,7 +116,7 @@ const Weather = () => {
                         <div className="icon">
                             <img src={iconUrl} alt="" />
                         </div>
-                        <div class="clear"></div>
+                        <div className="clear"></div>
                     </div>
 
                     <div className="weeklyWeather">
