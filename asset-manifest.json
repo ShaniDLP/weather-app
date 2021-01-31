@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/shani-perpinial-24-1-21/static/css/main.846056a2.chunk.css",
-    "main.js": "/shani-perpinial-24-1-21/static/js/main.5084ad4f.chunk.js",
-    "main.js.map": "/shani-perpinial-24-1-21/static/js/main.5084ad4f.chunk.js.map",
+    "main.css": "/shani-perpinial-24-1-21/static/css/main.28f36a4b.chunk.css",
+    "main.js": "/shani-perpinial-24-1-21/static/js/main.b2244d0a.chunk.js",
+    "main.js.map": "/shani-perpinial-24-1-21/static/js/main.b2244d0a.chunk.js.map",
     "runtime-main.js": "/shani-perpinial-24-1-21/static/js/runtime-main.e3ac4cee.js",
     "runtime-main.js.map": "/shani-perpinial-24-1-21/static/js/runtime-main.e3ac4cee.js.map",
     "static/js/2.df9a5420.chunk.js": "/shani-perpinial-24-1-21/static/js/2.df9a5420.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.2f985657.chunk.js": "/shani-perpinial-24-1-21/static/js/3.2f985657.chunk.js",
     "static/js/3.2f985657.chunk.js.map": "/shani-perpinial-24-1-21/static/js/3.2f985657.chunk.js.map",
     "index.html": "/shani-perpinial-24-1-21/index.html",
-    "static/css/main.846056a2.chunk.css.map": "/shani-perpinial-24-1-21/static/css/main.846056a2.chunk.css.map",
+    "static/css/main.28f36a4b.chunk.css.map": "/shani-perpinial-24-1-21/static/css/main.28f36a4b.chunk.css.map",
     "static/js/2.df9a5420.chunk.js.LICENSE.txt": "/shani-perpinial-24-1-21/static/js/2.df9a5420.chunk.js.LICENSE.txt",
     "static/media/weather.css": "/shani-perpinial-24-1-21/static/media/4.c2f8f755.jpg",
     "static/media/logo.6ce24c58.svg": "/shani-perpinial-24-1-21/static/media/logo.6ce24c58.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.e3ac4cee.js",
     "static/js/2.df9a5420.chunk.js",
-    "static/css/main.846056a2.chunk.css",
-    "static/js/main.5084ad4f.chunk.js"
+    "static/css/main.28f36a4b.chunk.css",
+    "static/js/main.b2244d0a.chunk.js"
   ]
 }
