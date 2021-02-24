@@ -6,7 +6,7 @@ import { getWeather } from '../../store/actions/weatherActions'
 import { FETCH_AUTOCOMPLETE, FETCH_AUTOCOMPLETE_SUCCESS } from '../../store/types';
 import "./search.css";
 
-const api_key = "rzAhwl6AD6Bp1KAWrsATx65TUhWmms5K";
+const api_key = "z3pKfUT60RLKAIer2PjWEd381jjDT1hb";
 
 function SearchBar() {
   const dispatch = useDispatch();
